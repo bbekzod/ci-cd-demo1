@@ -1,13 +1,10 @@
-name: asg_deployer
+name: rds_deployer
 on:
 
-on:
   workflow_run:
-    workflows: ["vpc_deployer"]
+    workflows: ["asg_deployer"]
     types:
       - completed
-
-  
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -32,17 +29,17 @@ jobs:
 
     # Runs a set of commands using the runners shell
       - name: Initialize
-        working-directory: asg
+        working-directory: rds
         run: |
           terraform init
 
       - name: Validate
-        working-directory: asg
+        working-directory: rds
         run: |
           terraform validate
 
       - name: Apply
-        working-directory: asg
+        working-directory: rds
         run: |
           terraform apply -auto-approve  
     
