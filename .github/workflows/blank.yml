@@ -1,8 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
-
-# Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
@@ -33,15 +29,17 @@ jobs:
 
     # Runs a set of commands using the runners shell
       - name: Initialize
+        working-directory: vpc
         run: |
           terraform init
 
       - name: Validate
+        working-directory: vpc
         run: |
           terraform validate
 
-
       - name: Apply
+        working-directory: vpc
         run: |
           terraform apply -auto-approve  
     
