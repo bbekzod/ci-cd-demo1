@@ -2,7 +2,7 @@ name: rds_deployer
 on:
 
   workflow_run:
-    workflows: ["asg_deployer"]
+    workflows: ["vpc_deployer"]
     types:
       - completed
 

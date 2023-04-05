@@ -3,7 +3,7 @@ on:
 
 on:
   workflow_run:
-    workflows: ["vpc_deployer"]
+    workflows: ["rds_deployer"]
     types:
       - completed
 
