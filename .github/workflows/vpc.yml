@@ -1,5 +1,5 @@
 env:
-  action: apply
+  action: destroy
 
 name: vpc_deployer
 on:

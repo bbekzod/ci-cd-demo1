@@ -1,3 +1,7 @@
+env:
+  action: apply
+
+
 name: asg_deployer
 on:
 
@@ -44,5 +48,5 @@ jobs:
       - name: Apply
         working-directory: asg
         run: |
-          terraform apply -auto-approve  
+          terraform   ${{ env.action }}    -auto-approve  
     
